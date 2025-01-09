@@ -8,6 +8,7 @@
       />
     </Head>
 
+    <NuxtLoadingIndicator />
     <slot />
   </div>
 </template>
