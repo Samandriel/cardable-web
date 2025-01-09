@@ -18,26 +18,10 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
   ],
   i18n: {
-    locales: [
-      { code: "en", language: "en-US" },
-      { code: "fr", language: "fr-FR" },
-      { code: "es", language: "es-ES" },
-      { code: "it", language: "it-IT" },
-      { code: "pt", language: "pt-BR" },
-      { code: "de", language: "de-DE" },
-      { code: "th", language: "th-TH" },
-    ],
-    defaultLocale: "en",
+    vueI18n: "./locale/config.ts",
   },
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: "Shad",
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: "./components/ui",
   },
 });

@@ -1,4 +1,16 @@
-# Langasus Frontend Project
+# Langasus Frontend
+
+www.langasus.com
+
+### Stacks
+
+- Nuxt 3
+- Pinia
+- Vitest
+- Tailwindcss
+- Shadcn
+
+### Essential Commands
 
 ```bash
 # Setup

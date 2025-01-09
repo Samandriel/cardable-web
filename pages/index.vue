@@ -1,8 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { setLocale } = useI18n();
+
+setLocale("th");
+</script>
 
 <template>
   <div>
     <h1>Welcome to the homepage</h1>
+    <h2>สวัสดี</h2>
+    <p>{{ $t("hello") }}</p>
   </div>
 </template>
 
