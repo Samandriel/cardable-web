@@ -24,4 +24,7 @@ export default defineNuxtConfig({
     prefix: "Shad",
     componentDir: "./components/ui",
   },
+  colorMode: {
+    classSuffix: "",
+  },
 });
