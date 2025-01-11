@@ -15,6 +15,7 @@
         <ShadNavigationMenuList>
           <NavigationThemeToggle />
           <NavigationLanguageSelector />
+          <NavigationNotification />
         </ShadNavigationMenuList>
       </ShadNavigationMenu>
     </div>
