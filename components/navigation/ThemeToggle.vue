@@ -12,11 +12,13 @@ const toggleTheme = () => {
 
 <template>
   <ShadNavigationMenuItem>
-    <ShadSwitch :checked="isDark" @update:checked="toggleTheme">
-      <template #thumb>
-        <Icon v-if="isDark" name="lucide:moon" class="size-3" />
-        <Icon v-else name="lucide:sun" class="size-3" />
-      </template>
-    </ShadSwitch>
+    <ClientOnly>
+      <ShadSwitch :checked="isDark" @update:checked="toggleTheme">
+        <template #thumb>
+          <Icon v-if="isDark" name="lucide:moon" class="size-3" />
+          <Icon v-else name="lucide:sun" class="size-3" />
+        </template>
+      </ShadSwitch>
+    </ClientOnly>
   </ShadNavigationMenuItem>
 </template>

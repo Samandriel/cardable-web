@@ -3,9 +3,6 @@
 
 <template>
   <div class="app-bar">
-    <NuxtLink to="/app" class="app-bar-logo">
-      <h1>Langasus</h1>
-    </NuxtLink>
     <div class="app-bar-menu-wrapper">
       <div class="app-bar-menu-left">
         <!--  -->
@@ -29,6 +26,11 @@
   padding: 0.5rem 1rem;
   justify-content: space-between;
   align-items: center;
-  /* background: var(--background); */
+  .app-bar-menu-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 </style>
