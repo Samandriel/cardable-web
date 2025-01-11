@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
+const isDark = computed(() => colorMode.value === "dark");
 const toggleTheme = () => {
   if (colorMode.value === "light") {
     colorMode.preference = "dark";
@@ -11,9 +12,11 @@ const toggleTheme = () => {
 
 <template>
   <ShadNavigationMenuItem>
-    <button class="p-2 rounded-full hover:bg-gray-200" @click="toggleTheme">
-      <span v-if="colorMode.value === 'dark'"> dark </span>
-      <span v-else> light </span>
-    </button>
+    <ShadSwitch :checked="isDark" @update:checked="toggleTheme">
+      <template #thumb>
+        <Icon v-if="isDark" name="lucide:moon" class="size-3" />
+        <Icon v-else name="lucide:sun" class="size-3" />
+      </template>
+    </ShadSwitch>
   </ShadNavigationMenuItem>
 </template>
