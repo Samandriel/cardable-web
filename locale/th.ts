@@ -1,3 +1,3 @@
-export const th = {
+export default {
   hello: "สวัสดี",
 };

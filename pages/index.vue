@@ -1,14 +1,11 @@
 <script setup lang="ts">
-const { setLocale } = useI18n();
-
-setLocale("th");
+const localePath = useLocalePath();
 </script>
 
 <template>
   <div>
-    <h1>Welcome to the homepage</h1>
-    <h2>สวัสดี</h2>
     <p>{{ $t("hello") }}</p>
+    <NuxtLink :to="localePath('/app')">Go to app</NuxtLink>
   </div>
 </template>
 
