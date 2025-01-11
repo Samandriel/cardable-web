@@ -2,7 +2,7 @@
 const { locale } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 const selectedLanguage = ref(0);
-const isMenuOpen = ref(false);
+const openMenu = ref(false);
 const languageOptions: LanguageOptions[] = [
   { name: "English", code: "en" },
   { name: "Thai", code: "th" },
@@ -17,32 +17,39 @@ const detectSelectedLanguage = () => {
     (option) => option.code === locale.value
   );
 };
+
+const onSelect = (localCode: LanguageOptions["code"]) => {
+  switchLocalePath(localCode);
+  openMenu.value = false;
+};
 </script>
 
 <template>
   <ClientOnly>
-    <ShadNavigationMenuItem v-model="isMenuOpen">
-      <ShadNavigationMenuTrigger>{{
-        languageOptions[selectedLanguage].name
-      }}</ShadNavigationMenuTrigger>
-      <ShadNavigationMenuContent>
-        <ul class="grid w-[150px] gap-3 p-4">
-          <li
-            v-for="(option, index) in languageOptions"
-            :key="option.code"
-            class="flex items-center justify-between rounded-md p-2 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-            :class="{
-              'bg-accent text-accent-foreground': index === selectedLanguage,
-            }"
-          >
-            <ShadNavigationMenuLink as-child>
-              <NuxtLink :to="switchLocalePath(option.code)">
-                {{ option.name }}
-              </NuxtLink>
-            </ShadNavigationMenuLink>
-          </li>
-        </ul>
-      </ShadNavigationMenuContent>
+    <ShadNavigationMenuItem>
+      <ShadPopover v-model:open="openMenu">
+        <ShadPopoverTrigger>{{
+          languageOptions[selectedLanguage].name
+        }}</ShadPopoverTrigger>
+        <ShadPopoverContent>
+          <ShadCommand>
+            <ShadCommandList>
+              <ShadCommandGroup>
+                <ShadCommandItem
+                  v-for="option in languageOptions"
+                  :key="option.code"
+                  :value="option.code"
+                  @select="onSelect(option.code)"
+                >
+                  <NuxtLink :to="switchLocalePath(option.code)">
+                    {{ option.name }}
+                  </NuxtLink>
+                </ShadCommandItem>
+              </ShadCommandGroup>
+            </ShadCommandList>
+          </ShadCommand>
+        </ShadPopoverContent>
+      </ShadPopover>
     </ShadNavigationMenuItem>
   </ClientOnly>
 </template>
