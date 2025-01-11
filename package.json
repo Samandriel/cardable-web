@@ -20,6 +20,7 @@
     "@nuxtjs/seo": "2.0.2",
     "@nuxtjs/tailwindcss": "npm:@nuxtjs/tailwindcss@nightly",
     "@pinia/nuxt": "^0.9.0",
+    "@vueuse/core": "^12.4.0",
     "@vueuse/nuxt": "12.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
