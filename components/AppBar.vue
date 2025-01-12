@@ -26,6 +26,8 @@
   padding: 0.5rem 1rem;
   justify-content: space-between;
   align-items: center;
+  border-bottom: var(--app-bar-border);
+  height: var(--app-bar-height);
   .app-bar-menu-wrapper {
     display: flex;
     width: 100%;
