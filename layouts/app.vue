@@ -5,10 +5,11 @@
     <div class="app-layout-sidebar">
       <AppSidebar />
     </div>
-    <div class="app-layout-content">
+    <div class="app-layout-main">
       <AppBar />
-      <p>{{ $t("hello") }}</p>
-      <slot />
+      <div class="app-layout-main-content">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -17,10 +18,14 @@
 .app-layout {
   display: flex;
   grid-template-columns: var(--sidebar-width) 1fr;
-
-  &-content {
+  &-main {
     flex-grow: 1;
     width: 100%;
+    &-content {
+      height: calc(100dvh - var(--app-bar-height));
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
   }
 }
 </style>
