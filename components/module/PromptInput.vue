@@ -3,21 +3,21 @@ const promptText = ref("");
 </script>
 
 <template>
-  <div class="prompt-input-wrapper">
+  <ShadCard class="prompt-input-wrapper">
     <textarea
       v-model="promptText"
       class="prompt-text-input"
-      placeholder="Input your own text..."
+      placeholder="Input your own text here..."
     />
     <div class="prompt-input-action-wrapper">
       <ShadButton variant="outline" class="prompt-input-reset-button">
         <Icon name="lucide:x" /> Clear
       </ShadButton>
-      <ShadButton variant="secondary" class="prompt-input-submit-button">
+      <ShadButton class="prompt-input-submit-button">
         <Icon name="lucide:send" /> Submit
       </ShadButton>
     </div>
-  </div>
+  </ShadCard>
 </template>
 
 <style lang="scss" scoped>
@@ -26,22 +26,22 @@ const promptText = ref("");
   justify-content: center;
   width: 100%;
   max-width: 600px;
-  background: hsl(var(--input-background));
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
+  background-color: hsl(var(--card));
   .prompt-text-input {
+    background-color: hsl(var(--card));
     width: 100%;
     outline: none;
-    background: hsl(var(--input-background));
     min-height: 200px;
     resize: none;
   }
   .prompt-input-action-wrapper {
     width: 100%;
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     justify-content: end;
   }
 }

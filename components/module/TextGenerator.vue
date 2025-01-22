@@ -259,12 +259,13 @@ watch(selectedCategory, (val) => {
           </ShadSelect>
         </div>
       </div>
+      <ShadSeparator />
     </ShadCardContent>
-    <ShadCardFooter class="flex justify-end gap-2">
-      <ShadButton variant="outline" class="prompt-input-reset-button">
+    <ShadCardFooter class="flex justify-end gap-4">
+      <ShadButton variant="outline" class="prompt-input-reset-button w-full">
         <Icon name="lucide:x" /> Reset
       </ShadButton>
-      <ShadButton variant="secondary" class="prompt-input-submit-button">
+      <ShadButton class="prompt-input-submit-button w-full">
         <Icon name="lucide:send" /> Submit
       </ShadButton>
     </ShadCardFooter>
@@ -274,17 +275,18 @@ watch(selectedCategory, (val) => {
 <style lang="scss" scoped>
 .prompt-generator-wrapper {
   margin-top: 10vh;
-  background: hsl(var(--background));
   max-width: 600px;
   margin: auto;
+  padding: 0.5rem 1.25rem;
   .generator-form-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    margin-bottom: 3rem;
     .generator-form-label {
       display: block;
       font-size: 0.875rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.375rem;
       font-weight: 600;
     }
   }
