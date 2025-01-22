@@ -1,17 +1,17 @@
-export const TYPES = ["General", "Academic", "Professional"];
+export const TEXT_TYPES = ["General", "Academic", "Professional"];
 
-export const GENERAL_WRITING_CATEGORIES = [
-  "Poetry",
+export const GENERAL_CATEGORIES = [
   "Article",
   "Dialog",
   "Email",
   "Personal Essay/Memoir",
+  "Poetry",
   "Review",
   "Screenplay/Scriptwriting",
   "Short Story",
 ];
 
-export const ACADEMIC_WRITING_CATEGORIES = [
+export const ACADEMIC_CATEGORIES = [
   "Essays",
   "Research Papers",
   "Theses and Dissertations",
@@ -27,7 +27,7 @@ export const ACADEMIC_WRITING_CATEGORIES = [
   "Peer Reviews/Academic Feedback",
 ];
 
-export const PROFESSIONAL_WRITING_CATEGORIES = [
+export const PROFESSIONAL_CATEGORIES = [
   "Business Emails",
   "Proposals and Bids",
   "Meeting Agendas and Minutes",
@@ -191,7 +191,7 @@ export const STORY_GENRES = [
   "Western",
 ];
 
-export const ACADEMIC_SUBJECTS = [
+export const CONTEXT_SUBJECTS = [
   "Anthropology",
   "Biology",
   "Business",

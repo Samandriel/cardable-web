@@ -1,3 +1,7 @@
 body {
   font-family: var(--font);
 }
+
+button[role="combobox"] {
+  @apply focus:ring-0 focus:ring-offset-0;
+}
