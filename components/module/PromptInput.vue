@@ -35,7 +35,7 @@ const promptText = ref("");
     background-color: hsl(var(--card));
     width: 100%;
     outline: none;
-    min-height: 200px;
+    min-height: 62vh;
     resize: none;
   }
   .prompt-input-action-wrapper {

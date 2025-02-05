@@ -275,7 +275,7 @@ watch(selectedCategory, (val) => {
 <style lang="scss" scoped>
 .prompt-generator-wrapper {
   margin-top: 10vh;
-  max-width: 600px;
+  max-width: 750px;
   margin: auto;
   padding: 0.5rem 1.25rem;
   .generator-form-wrapper {

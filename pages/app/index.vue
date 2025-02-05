@@ -5,7 +5,7 @@ definePageMeta({
 });
 
 const tabOptions = ["Input Your Own", "Generate Text"];
-const activeTab = ref(1);
+const activeTab = ref(0);
 </script>
 
 <template>
