@@ -91,14 +91,14 @@ const textPreviewFontSize = ref("1rem");
   background: hsl(var(--card));
   width: 100%;
   height: inherit;
-  @apply py-4;
+  @apply py-6;
   .text-title-wrapper {
     @apply px-6;
   }
   .preview-text-content {
     flex-grow: 1;
     flex-shrink: 0;
-    height: calc(100% - 7rem);
+    height: calc(100% - 8rem);
     font-size: v-bind(textPreviewFontSize);
     line-height: 2;
     @apply px-6 py-2;
