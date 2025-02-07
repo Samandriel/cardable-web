@@ -2,8 +2,13 @@
 definePageMeta({
   layout: "app",
 });
+
 const generatedTextTitle = ref("Lorem ipsum dolor sit amet.");
 const textPreviewFontSize = ref("1rem");
+
+const onBackButtonClick = () => {
+  navigateTo("/app");
+};
 </script>
 
 <template>
@@ -60,6 +65,10 @@ const textPreviewFontSize = ref("1rem");
         accumsan. Morbi non sollicitudin justo.
       </ShadScrollArea>
       <div class="preview-text-action">
+        <ShadButton @click="onBackButtonClick">
+          <Icon name="lucide:arrow-left" />
+          Back
+        </ShadButton>
         <ShadButton>
           <Icon name="lucide:refresh-cw" />
           New Text
