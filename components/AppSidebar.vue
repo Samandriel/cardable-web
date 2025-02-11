@@ -1,4 +1,16 @@
 <script setup lang="ts">
+const libraryMenu = [
+  {
+    title: "Flashcards",
+    icon: "lucide:gallery-horizontal-end",
+    link: "/app/library/flashcards",
+  },
+  {
+    title: "Notebooks",
+    icon: "lucide:book-copy",
+    link: "/app/library/notebooks",
+  },
+];
 const notebooks = [
   {
     id: 1,
@@ -159,6 +171,32 @@ const onClickCollection = (collectionId: number) => {
           </ShadSidebarGroupContent>
         </ShadSidebarGroup>
       </ShadSidebarContent>
+
+      <ShadSidebarFooter class="app-sidebar-footer">
+        <ShadSidebarSeparator class="bg-border" />
+        <!-- Collections -->
+        <ShadSidebarGroup class="app-sidebar-group">
+          <ShadSidebarGroupContent>
+            <ShadSidebarGroupLabel class="app-sidebar-group-label">
+              {{ $t("appBar.group.label.library") }}
+            </ShadSidebarGroupLabel>
+            <ShadSidebarMenu v-for="menu in libraryMenu" :key="menu.title">
+              <NuxtLink :to="menu?.link">
+                <ShadSidebarMenuItem
+                  class="app-sidebar-menu-item"
+                  to="/flashcards"
+                >
+                  <Icon :name="menu?.icon" class="size-4" />
+                  {{ menu?.title }}
+                  <ShadSidebarMenuAction>
+                    <Icon name="lucide:chevron-right" class="size-4" />
+                  </ShadSidebarMenuAction>
+                </ShadSidebarMenuItem>
+              </NuxtLink>
+            </ShadSidebarMenu>
+          </ShadSidebarGroupContent>
+        </ShadSidebarGroup>
+      </ShadSidebarFooter>
     </ShadSidebar>
   </ShadSidebarProvider>
 </template>
