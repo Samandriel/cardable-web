@@ -10,20 +10,20 @@ import {
   REVIEW_TOPICS,
   STORY_GENRES,
   CONTEXT_SUBJECTS,
-} from "@/assets/data/constants/prompt-generator-options.ts";
+} from "@/assets/data/constants/prompt-generator-options";
 
-const selectedTextType = ref(null);
-const selectedCategory = ref(null);
-const selectedTopic = ref(null);
+const selectedTextType = ref("");
+const selectedCategory = ref("");
+const selectedTopic = ref("");
 const topicLabel = ref("Topic");
 
 watch(selectedTextType, () => {
-  selectedCategory.value = null;
-  selectedTopic.value = null;
+  selectedCategory.value = "";
+  selectedTopic.value = "";
 });
 
 watch(selectedCategory, (val) => {
-  selectedTopic.value = null;
+  selectedTopic.value = "";
 
   if (ACADEMIC_CATEGORIES.includes(val)) {
     topicLabel.value = "Subject";
@@ -76,7 +76,6 @@ watch(selectedCategory, (val) => {
             v-if="selectedTextType === 'General'"
             id="category"
             v-model="selectedCategory"
-            @change="onCategoryChanged"
           >
             <ShadSelectTrigger>
               <ShadSelectValue placeholder="Select Category" />
@@ -95,7 +94,6 @@ watch(selectedCategory, (val) => {
             v-if="selectedTextType === 'Academic'"
             id="category"
             v-model="selectedCategory"
-            @change="onCategoryChanged"
           >
             <ShadSelectTrigger>
               <ShadSelectValue placeholder="Select Category" />
@@ -114,7 +112,6 @@ watch(selectedCategory, (val) => {
             v-if="selectedTextType === 'Professional'"
             id="category"
             v-model="selectedCategory"
-            @change="onCategoryChanged"
           >
             <ShadSelectTrigger>
               <ShadSelectValue placeholder="Select Category" />

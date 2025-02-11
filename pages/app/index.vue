@@ -9,7 +9,7 @@ const activeTab = ref(0);
 </script>
 
 <template>
-  <ShadTabs v-model="activeTab" class="prompt-interface-wrapper">
+  <ShadTabs v-model="activeTab" class="page-wrapper">
     <div class="prompt-interface-tabs">
       <ShadTabsList class="grid w-[400px] grid-cols-2">
         <ShadTabsTrigger
@@ -31,10 +31,7 @@ const activeTab = ref(0);
 </template>
 
 <style lang="scss" scoped>
-.prompt-interface-wrapper {
-  height: inherit;
-  padding: 1rem;
-  overflow: auto;
+.page-wrapper {
   .prompt-interface-tabs {
     display: flex;
     justify-content: center;

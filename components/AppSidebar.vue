@@ -66,7 +66,7 @@ const onClickCollection = (collectionId: number) => {
 </script>
 
 <template>
-  <ShadSidebarProvider :open="true">
+  <ShadSidebarProvider :open="true" class="app-sidebar">
     <ShadSidebar>
       <ShadSidebarHeader class="app-sidebar-header">
         Langasus

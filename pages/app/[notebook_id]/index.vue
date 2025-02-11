@@ -89,7 +89,6 @@ const onBackButtonClick = () => {
 .page-wrapper {
   display: flex;
   flex: 1 0 auto;
-  padding: 1rem;
   height: calc(100vh - var(--app-bar-height) - 2rem);
 }
 .preview-text-wrapper {

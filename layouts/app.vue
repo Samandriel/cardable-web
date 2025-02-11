@@ -8,7 +8,9 @@
     <div class="app-layout-main">
       <AppBar />
       <div class="app-layout-main-content">
-        <slot />
+        <div class="app-layout-main-content-scrollable">
+          <slot />
+        </div>
       </div>
     </div>
   </div>
@@ -18,17 +20,32 @@
 @use "~/assets/scss/main.scss";
 
 .app-layout {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  grid-template-columns: var(--sidebar-width) 1fr;
+  .app-layout-sidebar {
+    z-index: 100;
+  }
   &-main {
+    z-index: 99;
     flex-grow: 1;
-    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     &-content {
+      position: relative;
       height: calc(100vh - var(--app-bar-height));
       overflow: hidden;
+      &-scrollable {
+        height: inherit;
+        padding: 2rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
     }
   }
 }

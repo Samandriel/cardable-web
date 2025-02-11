@@ -1,4 +1,4 @@
-const flashcardDecks: FlashcardDeck[] = [
+export const flashcardDecks: FlashcardDeck[] = [
   {
     id: 1,
     name: "Basic French",
@@ -571,5 +571,3 @@ const flashcardDecks: FlashcardDeck[] = [
     updatedAt: "2025-02-09T10:09:00Z",
   },
 ];
-
-export default flashcardDecks;

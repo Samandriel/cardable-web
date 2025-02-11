@@ -1,11 +1,13 @@
 //
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const route = useRoute();
+</script>
 
 <template>
   <div class="app-bar">
     <div class="app-bar-menu-wrapper">
       <div class="app-bar-menu-left">
-        <!--  -->
+        {{ route.meta.title }}
       </div>
 
       <ShadNavigationMenu class="app-bar-menu-right">
