@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @apply mb-4;
+  @apply mb-5;
   &::after {
     content: "";
     position: absolute;

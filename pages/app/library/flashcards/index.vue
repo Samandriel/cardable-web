@@ -33,6 +33,7 @@ const allFlashcardDecks = ref(
             :data="deck"
           />
           <NuxtLink class="flashcard-deck-more" to="/app/flashcard">
+            <Icon name="fluent:copy-32-regular" size="3rem" />
             <span>View More</span>
           </NuxtLink>
         </div>
@@ -61,6 +62,7 @@ const allFlashcardDecks = ref(
             :data="deck"
           />
           <NuxtLink class="flashcard-deck-more" to="/app/flashcard">
+            <Icon name="fluent:copy-32-regular" size="3rem" />
             <span>View More</span>
           </NuxtLink>
         </div>
@@ -82,15 +84,20 @@ const allFlashcardDecks = ref(
   grid-template-columns: repeat(4, minmax(0, 1fr));
   flex-wrap: wrap;
   flex: 1 1 auto;
-  gap: 1rem;
+  gap: 1.25rem 1rem;
   .flashcard-deck-more {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
+    gap: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    background-color: hsl(var(--card));
     &:hover {
       text-decoration: underline;
+      background-color: hsl(var(--card-muted));
     }
   }
 }
