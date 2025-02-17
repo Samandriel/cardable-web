@@ -1,6 +1,6 @@
-# Langasus Frontend
+# Cardable Web Frontend
 
-www.langasus.com
+www.cardable.app
 
 ### Stacks
 
