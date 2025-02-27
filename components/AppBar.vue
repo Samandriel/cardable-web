@@ -5,11 +5,13 @@ const route = useRoute();
 
 <template>
   <div class="app-bar">
+    <div class="app-bar-page-title">
+      {{ route.meta.title }}
+    </div>
     <div class="app-bar-menu-wrapper">
       <div class="app-bar-menu-left">
-        {{ route.meta.title }}
+        <!--  -->
       </div>
-
       <ShadNavigationMenu class="app-bar-menu-right">
         <ShadNavigationMenuList>
           <NavigationThemeToggle />
@@ -30,6 +32,9 @@ const route = useRoute();
   align-items: center;
   border-bottom: var(--app-bar-border);
   height: var(--app-bar-height);
+  .app-bar-page-title {
+    font-weight: bold;
+  }
   .app-bar-menu-wrapper {
     display: flex;
     width: 100%;

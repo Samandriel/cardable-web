@@ -41,19 +41,26 @@ const menuItems = [
             <!-- <ShadSidebarGroupLabel class="app-sidebar-group-label">
               {{ $t("appBar.group.label.library") }}
             </ShadSidebarGroupLabel> -->
-            <ShadSidebarMenu v-for="menu in menuItems" :key="menu.title">
-              <NuxtLink :to="menu.url">
-                <ShadSidebarMenuItem
-                  class="app-sidebar-menu-item"
-                  :to="menu.url"
-                >
-                  <Icon :name="menu.icon" class="size-4" />
-                  {{ menu.title }}
-                  <ShadSidebarMenuAction>
+            <ShadSidebarMenu>
+              <ShadSidebarMenuItem
+                v-for="menu in menuItems"
+                :key="menu.title"
+                class="app-sidebar-menu-item"
+                :class="{ 'is-active': menu.url === $route.path }"
+              >
+                <ShadSidebarMenuButton as-child>
+                  <!-- :is-active="menu.url === $route.path"
+                  class="app-sidebar-menu-button" -->
+                  <NuxtLink :to="menu.url">
+                    <Icon :name="menu.icon" class="size-6" />
+                    {{ menu.title }}
+                  </NuxtLink>
+                </ShadSidebarMenuButton>
+
+                <!-- <ShadSidebarMenuAction>
                     <Icon name="lucide:chevron-right" class="size-4" />
-                  </ShadSidebarMenuAction>
-                </ShadSidebarMenuItem>
-              </NuxtLink>
+                  </ShadSidebarMenuAction> -->
+              </ShadSidebarMenuItem>
             </ShadSidebarMenu>
           </ShadSidebarGroupContent>
         </ShadSidebarGroup>
@@ -91,20 +98,22 @@ const menuItems = [
   user-select: none;
   cursor: pointer;
   background: none;
-  @apply p-1 gap-1;
-
+  transition: all 0.2s ease-in-out;
+  border-radius: var(--radius);
+  @apply p-1 gap-2;
+  &.is-active,
   &:hover:not(.app-sidebar-group-label) {
     background: hsl(var(--muted));
   }
 }
 
-.app-sidebar-action {
+/* .app-sidebar-action {
   display: none;
-}
+} */
 
-.app-sidebar-group-label:hover .app-sidebar-action,
+/* .app-sidebar-group-label:hover .app-sidebar-action,
 .app-sidebar-menu-sub-item:hover .app-sidebar-action,
 .app-sidebar-menu-item:hover .app-sidebar-action {
   display: block;
-}
+} */
 </style>
