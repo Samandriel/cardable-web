@@ -5,7 +5,7 @@ const localePath = useLocalePath();
 <template>
   <div>
     <p>{{ $t("hello") }}</p>
-    <NuxtLink :to="localePath('/app')">Go to app</NuxtLink>
+    <NuxtLink :to="localePath('/app/flashcard')">Go to app</NuxtLink>
   </div>
 </template>
 

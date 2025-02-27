@@ -4,14 +4,12 @@ export default {
   hello: "Hello",
   appBar: {
     button: {
-      newNotebook: "New Notebook",
+      newFlashcard: "New Flashcard",
     },
-    group: {
-      label: {
-        collections: "Collections",
-        allNotebooks: "All Notebooks",
-        library: "Library",
-      },
+    menuItems: {
+      allNotebooks: "Home",
+      collections: "Collections",
+      library: "Library",
     },
   },
 };

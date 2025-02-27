@@ -3,7 +3,7 @@ import { flashcardDecks } from "~/assets/data/flashcards";
 
 definePageMeta({
   layout: "app",
-  title: "Flashcards",
+  title: "Library",
 });
 
 const recentFlashcardDecks = ref(flashcardDecks.slice(0, 3));
