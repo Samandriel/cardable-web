@@ -1,11 +1,16 @@
 declare global {
   interface Flashcard {
     id: number;
-    term: string;
-    pronunciation: string;
-    definition: string;
-    image: string;
-    examples: string[];
+    front: {
+      content: string | object;
+      image: string;
+      contentType: "PlainText" | "Block";
+    };
+    back: {
+      content: string | object;
+      image: string;
+      contentType: "PlainText" | "Block";
+    };
     deckId: number;
     createdAt: string;
     updatedAt: string;
@@ -16,8 +21,10 @@ declare global {
     name: string;
     description: string;
     image: string;
-    languageFront: string;
-    languageBack: string;
+    subjectId: number;
+    topicIds: number[];
+    languagePrimary: string;
+    languageSecondary: string;
     flashcards: Flashcard[];
     userId: number;
     createdAt: string;
