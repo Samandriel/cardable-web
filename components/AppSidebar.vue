@@ -22,7 +22,10 @@ const menuItems = [
   <ShadSidebarProvider :open="true" class="app-sidebar">
     <ShadSidebar>
       <ShadSidebarHeader class="app-sidebar-header">
-        Cardable
+        <div class="brand-logo">
+          <Icon name="material-symbols:stacks-outline-rounded" class="size-6" />
+          Cardable
+        </div>
       </ShadSidebarHeader>
       <ShadSidebarContent class="gap-0">
         <!-- New Notebook -->
@@ -80,6 +83,17 @@ const menuItems = [
   justify-content: center;
   height: var(--app-bar-height);
   border-bottom: var(--app-bar-border);
+  .brand-logo {
+    margin: auto;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    font-family: Gelasio, serif;
+    font-weight: 700;
+    /* font-style: italic; */
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 .app-sidebar-group {
   @apply px-4;

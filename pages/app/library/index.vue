@@ -1,21 +1,10 @@
 <script setup lang="ts">
-import { flashcardDecks } from "~/assets/data/flashcards";
+// import { flashcardDecks } from "~/assets/data/flashcards";
 
 definePageMeta({
   layout: "app",
   title: "Library",
 });
-
-const recentFlashcardDecks = ref(flashcardDecks.slice(0, 3));
-// const recommendedFlashcardDecks = ref(flashcardDecks);
-const allFlashcardDecks = ref(
-  [
-    ...flashcardDecks,
-    ...flashcardDecks,
-    ...flashcardDecks,
-    ...flashcardDecks,
-  ].slice(0, 11)
-);
 </script>
 
 <template>
