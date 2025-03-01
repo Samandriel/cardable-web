@@ -22,7 +22,7 @@ const allFlashcardDecks = ref(
   <div class="page-wrapper">
     <section v-if="recentFlashcardDecks.length > 0" class="page-section">
       <AppPageSectionHeader>
-        <span>Recent</span>
+        <span>Viewed Recently</span>
         <!-- <template #right> View All </template> -->
       </AppPageSectionHeader>
       <div class="page-section-content">

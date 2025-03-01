@@ -23,6 +23,17 @@ declare global {
     createdAt: string;
     updatedAt: string;
   }
+
+  interface FlashcardSubject {
+    id: number;
+    name: string;
+    topics: FlashcardTopic[];
+  }
+
+  interface FlashcardTopic {
+    id: number;
+    name: string;
+  }
 }
 
 export {};

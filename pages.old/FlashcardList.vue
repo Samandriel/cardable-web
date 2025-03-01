@@ -3,7 +3,7 @@ import { flashcardDecks } from "~/assets/data/flashcards";
 
 definePageMeta({
   layout: "app",
-  title: "Home",
+  title: "Library",
 });
 
 const recentFlashcardDecks = ref(flashcardDecks.slice(0, 3));
@@ -22,7 +22,7 @@ const allFlashcardDecks = ref(
   <div class="page-wrapper">
     <section v-if="recentFlashcardDecks.length > 0" class="page-section">
       <AppPageSectionHeader>
-        <span>Recent</span>
+        <span>Viewed Recently</span>
         <!-- <template #right> View All </template> -->
       </AppPageSectionHeader>
       <div class="page-section-content">
@@ -40,36 +40,24 @@ const allFlashcardDecks = ref(
       </div>
     </section>
 
-    <section class="page-section">
+    <!-- <section class="page-section">
       <AppPageSectionHeader>
-        <span>Popular Flashcards</span>
-        <!-- <template #right> View All </template> -->
+        <span>Recommended for you</span>
       </AppPageSectionHeader>
       <div class="page-section-content">
-        <div v-if="allFlashcardDecks.length > 0" class="flashcard-deck-list">
-          <FlashcardDeck
-            v-for="deck in allFlashcardDecks.slice(0, 7)"
-            :key="deck.id"
-            :data="deck"
-          />
-          <NuxtLink class="flashcard-deck-more" to="/app/flashcard">
-            <Icon name="fluent:copy-32-regular" size="3rem" />
-            <span>View More</span>
-          </NuxtLink>
-        </div>
-        <div v-else>no flashcard</div>
+        
       </div>
-    </section>
+    </section> -->
 
     <section class="page-section">
       <AppPageSectionHeader>
-        <span>Shared Collections</span>
+        <span>Flashcard Library</span>
         <!-- <template #right> View All </template> -->
       </AppPageSectionHeader>
       <div class="page-section-content">
         <div v-if="allFlashcardDecks.length > 0" class="flashcard-deck-list">
           <FlashcardDeck
-            v-for="deck in allFlashcardDecks.slice(0, 7)"
+            v-for="deck in allFlashcardDecks"
             :key="deck.id"
             :data="deck"
           />
@@ -86,8 +74,6 @@ const allFlashcardDecks = ref(
 
 <style lang="scss" scoped>
 .page-wrapper {
-  max-width: 1200px;
-  margin: auto;
   .page-section {
     margin-bottom: 2.5rem;
     width: 100%;

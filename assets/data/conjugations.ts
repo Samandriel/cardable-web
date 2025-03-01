@@ -1,4 +1,4 @@
-const verbs = [
+export default [
   {
     verb: "",
     infinitive: "",

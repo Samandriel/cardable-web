@@ -1,28 +1,15 @@
 <script setup lang="ts">
-import { flashcardDecks } from "~/assets/data/flashcards";
-
 definePageMeta({
   layout: "app",
-  title: "Library",
+  title: "New Flashcard",
 });
-
-const recentFlashcardDecks = ref(flashcardDecks.slice(0, 3));
-// const recommendedFlashcardDecks = ref(flashcardDecks);
-const allFlashcardDecks = ref(
-  [
-    ...flashcardDecks,
-    ...flashcardDecks,
-    ...flashcardDecks,
-    ...flashcardDecks,
-  ].slice(0, 11)
-);
 </script>
 
 <template>
   <div class="page-wrapper">
-    <!-- SEARCH AND FILTER - display search bar and toggle to reveal full page filters -->
-    <ModuleSearchAndFilter />
-    <!-- Flashcard Deck List -->
+    <!-- - Generate Flashcards With AI
+    - Import Flashcards from Files
+    - Create Custom Flashcards -->
   </div>
 </template>
 

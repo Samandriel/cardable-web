@@ -28,10 +28,12 @@ const menuItems = [
         <!-- New Notebook -->
         <ShadSidebarGroup class="app-sidebar-group py-4">
           <ShadSidebarGroupContent>
-            <ShadButton class="w-full">
-              <Icon name="lucide:book-plus" class="size-4" />
-              {{ $t("appBar.button.newFlashcard") }}
-            </ShadButton>
+            <NuxtLink to="/app/new-flashcard">
+              <ShadButton class="w-full">
+                <Icon name="lucide:book-plus" class="size-4" />
+                {{ $t("appBar.button.newFlashcard") }}
+              </ShadButton>
+            </NuxtLink>
           </ShadSidebarGroupContent>
         </ShadSidebarGroup>
         <ShadSidebarSeparator class="bg-border" />
